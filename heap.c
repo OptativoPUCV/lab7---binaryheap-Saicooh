@@ -33,8 +33,11 @@ Heap *createHeap()
   return h;
 }
 
-void* heap_top(Heap* pq){
-    return NULL;
+void* heap_top(Heap* pq)
+{
+  if(!pq -> size || !pq -> heapArray[0].data) return NULL;
+
+  return NULL;
 }
 
 
