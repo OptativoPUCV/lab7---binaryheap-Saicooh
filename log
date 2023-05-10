@@ -796,3 +796,14 @@ heap.c:70:63: error: ‘indiceHijoMayorPrioridad’ may be used uninitialized in
 cc1: all warnings being treated as errors
 Compilation failed
 b6edace
+Wed 10 May 2023 10:30:15 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:69:63: error: ‘indiceHijoMayorPrioridad’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   69 |     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
+      |                                                               ^
+cc1: all warnings being treated as errors
+Compilation failed
+00f9a7f
