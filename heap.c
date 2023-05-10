@@ -37,7 +37,7 @@ void* heap_top(Heap* pq)
 {
   if(!pq -> size || !pq -> heapArray[0].data) return NULL;
 
-  return NULL;
+  return pq -> heapArray[0].data;
 }
 
 
