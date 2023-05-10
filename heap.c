@@ -42,7 +42,7 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap *pq, void *data, int priority)
 {
-  if(!pq -> size) return NULL;
+  if(!pq -> size) return;
   
   int i = 0;
   
@@ -52,6 +52,7 @@ void heap_push(Heap *pq, void *data, int priority)
     {
       pq -> heapArray[i].data = data;
       pq -> heapArray[i].priority = priority;
+      return;
     }
     i++;
   }
