@@ -31,14 +31,14 @@ Heap *createHeap()
 
 void* heap_top(Heap* pq)
 {
-  if(!pq -> size) return NULL;
+  if(!pq} return NULL;
 
   return pq -> heapArray[0].data;
 }
 
 void heap_push(Heap *pq, void *data, int priority)
 {
-  heapElem auxiliar;
+  //heapElem auxiliar;
   
   if(pq -> size == pq -> capac)
   {
