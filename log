@@ -807,3 +807,31 @@ heap.c:69:63: error: ‘indiceHijoMayorPrioridad’ may be used uninitialized in
 cc1: all warnings being treated as errors
 Compilation failed
 00f9a7f
+Wed 10 May 2023 10:35:39 PM UTC: 
+ heap.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:70:16: error: ‘posI’ undeclared (first use in this function); did you mean ‘pos’?
+   70 |     int hijo = posI;
+      |                ^~~~
+      |                pos
+heap.c:70:16: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:71:67: error: ‘heapArray’ undeclared (first use in this function)
+   71 |     if (posDer < pq -> size && pq -> heapArray[posDer].priority > heapArray[posIzq].priority) hijo = posDer;
+      |                                                                   ^~~~~~~~~
+heap.c:73:24: error: ‘indicePadre’ undeclared (first use in this function)
+   73 |     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
+      |                        ^~~~~~~~~~~
+heap.c:73:64: error: ‘indiceHijoMayorPrioridad’ undeclared (first use in this function)
+   73 |     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
+      |                                                                ^~~~~~~~~~~~~~~~~~~~~~~~
+heap.c:70:9: error: variable ‘hijo’ set but not used [-Werror=unused-but-set-variable]
+   70 |     int hijo = posI;
+      |         ^~~~
+heap.c:63:31: error: unused variable ‘pos’ [-Werror=unused-variable]
+   63 |   int posIzq = 1, posDer = 2, pos = 0;
+      |                               ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+1ebd6c9
