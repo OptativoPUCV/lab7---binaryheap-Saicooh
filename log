@@ -876,3 +876,14 @@ heap.c:75:64: error: ‘indiceHijoMayorPrioridad’ undeclared (first use in thi
       |                                                                ^~~~~~~~~~~~~~~~~~~~~~~~
 Compilation failed
 221a897
+Wed 10 May 2023 10:40:00 PM UTC: 
+ heap.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:71:67: error: ‘heapArray’ undeclared (first use in this function)
+   71 |     if (posDer < pq -> size && pq -> heapArray[posDer].priority > heapArray[posIzq].priority) hijo = posDer;
+      |                                                                   ^~~~~~~~~
+heap.c:71:67: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+a1c0ad2
