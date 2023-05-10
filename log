@@ -476,3 +476,18 @@ heap.c:56:5: error: ‘heapArray’ undeclared (first use in this function)
       |     ^~~~~~~~~
 Compilation failed
 c44d8f5
+Wed 10 May 2023 07:54:45 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:56:5: error: ‘heapArray’ undeclared (first use in this function)
+   56 |     heapArray[(pq -> size - 1) / 2] = pq -> heapArray[pq -> size];
+      |     ^~~~~~~~~
+heap.c:56:5: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:41:12: error: variable ‘auxiliar’ set but not used [-Werror=unused-but-set-variable]
+   41 |   heapElem auxiliar;
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4d9c640
