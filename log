@@ -247,3 +247,68 @@ heap.c:58:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 0b28c54
+Wed 10 May 2023 07:44:26 PM UTC: 
+ heap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:
+heap.c:19:3: error: conflicting types for ‘Heap’
+   19 | } Heap;
+      |   ^~~~
+In file included from heap.c:6,
+                 from test.c:4:
+heap.h:4:21: note: previous declaration of ‘Heap’ was here
+    4 | typedef struct Heap Heap;
+      |                     ^~~~
+In file included from test.c:4:
+heap.c:21:7: error: conflicting types for ‘createHeap’
+   21 | Heap *createHeap()
+      |       ^~~~~~~~~~
+In file included from heap.c:6,
+                 from test.c:4:
+heap.h:6:7: note: previous declaration of ‘createHeap’ was here
+    6 | Heap* createHeap();
+      |       ^~~~~~~~~~
+In file included from test.c:4:
+heap.c:38:7: error: conflicting types for ‘heap_top’
+   38 | void* heap_top(Heap* pq)
+      |       ^~~~~~~~
+In file included from heap.c:6,
+                 from test.c:4:
+heap.h:7:7: note: previous declaration of ‘heap_top’ was here
+    7 | void* heap_top(Heap* pq);
+      |       ^~~~~~~~
+In file included from test.c:4:
+heap.c:45:6: error: conflicting types for ‘heap_push’
+   45 | void heap_push(Heap *pq, void *data, int priority)
+      |      ^~~~~~~~~
+In file included from heap.c:6,
+                 from test.c:4:
+heap.h:8:6: note: previous declaration of ‘heap_push’ was here
+    8 | void heap_push(Heap* pq, void* data, int priority);
+      |      ^~~~~~~~~
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:61:97: error: expected ‘)’ before ‘{’ token
+   61 |   while (pq -> heapArray[pq -> size].priority > (pq -> heapArray[(pq -> size - 1) / 2].priority)
+      |         ~                                                                                       ^
+      |                                                                                                 )
+   62 |   {
+      |   ~                                                                                              
+heap.c:75:1: error: expected expression before ‘}’ token
+   75 | }
+      | ^
+heap.c:47:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
+   47 |   heapElem auxiliar;
+      |            ^~~~~~~~
+heap.c: At top level:
+heap.c:78:6: error: conflicting types for ‘heap_pop’
+   78 | void heap_pop(Heap* pq){
+      |      ^~~~~~~~
+In file included from heap.c:6,
+                 from test.c:4:
+heap.h:9:6: note: previous declaration of ‘heap_pop’ was here
+    9 | void heap_pop(Heap* pq);
+      |      ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6447b27
