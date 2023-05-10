@@ -61,7 +61,7 @@ void heap_push(Heap *pq, void *data, int priority)
 void heap_pop(Heap *pq)
 {
   int indicePadre = 0, indiceHijoMayorPrioridad;
-  heapElem raiz = pq -> heapArray[0], aux;
+  heapElem aux;
   pq -> heapArray[0] = pq -> heapArray[pq -> size - 1];
   
   while (pq -> size > 2 * indicePadre + 1)
