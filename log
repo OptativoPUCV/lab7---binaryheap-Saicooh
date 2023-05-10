@@ -502,3 +502,20 @@ heap.c:41:12: error: variable ‘auxiliar’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 9f05868
+Wed 10 May 2023 08:03:56 PM UTC: 
+ heap.c | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:55:72: error: expected ‘;’ before ‘pq’
+   55 |     pq -> heapArray[pq -> size] = pq -> heapArray[(pq -> size - 1) / 2]
+      |                                                                        ^
+      |                                                                        ;
+   56 |     pq -> size = (pq -> size - 1) / 2;
+      |     ~~                                                                  
+heap.c:41:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
+   41 |   heapElem auxiliar;
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+50bf3f4

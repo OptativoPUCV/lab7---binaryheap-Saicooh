@@ -7,13 +7,13 @@
 
 typedef struct nodo
 {
-  void* data;
+  void *data;
   int priority;
 } heapElem;
 
 typedef struct Heap
 {
-  heapElem* heapArray;
+  heapElem *heapArray;
   int size;
   int capac;
 } Heap;
@@ -22,7 +22,7 @@ Heap *createHeap()
 {
   Heap *h = malloc(sizeof(Heap));
 
-  h -> heapArray = malloc(3*sizeof(Heap));
+  h -> heapArray = malloc(3 * sizeof(Heap));
   h -> size = 0;
   h -> capac = 3;
 
@@ -50,15 +50,13 @@ void heap_push(Heap *pq, void *data, int priority)
   pq -> heapArray[pq -> size].priority = priority;
   pq -> size++;
 
-  while (pq -> heapArray[pq -> size].priority > (pq -> heapArray[(pq -> size - 1) / 2].priority))
+  while (priority > (pq -> heapArray[(pq -> size - 1) / 2].priority))
   {
-    auxiliar = pq -> heapArray[(pq -> size - 1) / 2];
-    pq -> heapArray[(pq -> size - 1) / 2] = pq -> heapArray[pq -> size];
-
-    
-    
+    pq -> heapArray[pq -> size] = pq -> heapArray[(pq -> size - 1) / 2]
+    pq -> size = (pq -> size - 1) / 2;
   }
 
+  
   
   
 
