@@ -192,3 +192,14 @@ heap.c:45:7: error: unused variable ‘i’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 cc4427a
+Wed 10 May 2023 03:45:05 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:45:7: error: unused variable ‘i’ [-Werror=unused-variable]
+   45 |   int i;
+      |       ^
+cc1: all warnings being treated as errors
+Compilation failed
+f6432c8
