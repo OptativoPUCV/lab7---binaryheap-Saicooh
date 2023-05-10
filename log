@@ -50,3 +50,17 @@ heap.c:23:37: error: expected ‘;’ before ‘return’
       |                                     ;
 Compilation failed
 dc3af9a
+Wed 10 May 2023 03:20:23 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:23:3: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   23 |   if (!h || !h -> heapArray) free(h) ;return NULL;
+      |   ^~
+heap.c:23:39: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   23 |   if (!h || !h -> heapArray) free(h) ;return NULL;
+      |                                       ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+59a83b0
