@@ -40,10 +40,23 @@ void* heap_top(Heap* pq)
   return pq -> heapArray[0].data;
 }
 
-
-
-void heap_push(Heap* pq, void* data, int priority){
-
+void heap_push(Heap *pq, void *data, int priority)
+{
+  if(!pq -> size) return NULL;
+  
+  int i = 0;
+  
+  while(pq -> heapArray != NULL)
+  {
+    if(pq -> heapArray[i] == NULL)
+    {
+      pq -> heapArray[i].data = data;
+      pq -> heapArray[i].priority = priority;
+      return;
+    }
+    i++;
+  }
+  
 }
 
 
