@@ -20,7 +20,7 @@ Heap *createHeap()
 {
   Heap *h = malloc(sizeof(Heap));
 
-  if (!h || !h -> heapArray) free(h); return NULL;
+  if (!h || !h -> heapArray) free(h) return NULL;
   
   h -> heapArray = malloc(3*sizeof(Heap));
   h -> size = 0;
