@@ -52,7 +52,7 @@ void heap_push(Heap *pq, void *data, int priority)
 
   while (priority > (pq -> heapArray[(pq -> size - 1) / 2].priority))
   {
-    pq -> heapArray[pq -> size] = pq -> heapArray[(pq -> size - 1) / 2]
+    pq -> heapArray[pq -> size] = pq -> heapArray[(pq -> size - 1) / 2];
     pq -> size = (pq -> size - 1) / 2;
   }
 

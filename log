@@ -519,3 +519,14 @@ heap.c:41:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 50bf3f4
+Wed 10 May 2023 08:04:04 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:41:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
+   41 |   heapElem auxiliar;
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+62ec354
