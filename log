@@ -604,3 +604,20 @@ heap.c:77:38: error: ‘heapArray’ undeclared (first use in this function)
 heap.c:77:38: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 62586db
+Wed 10 May 2023 08:55:24 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:71:10: error: used struct type value where scalar is required
+   71 |       if(pq -> heapArray[indiceHijoMayorPrioridad + 1]) > (pq -> heapArray[indiceHijoMayorPrioridad])
+      |          ^~
+heap.c:71:57: error: expected expression before ‘>’ token
+   71 |       if(pq -> heapArray[indiceHijoMayorPrioridad + 1]) > (pq -> heapArray[indiceHijoMayorPrioridad])
+      |                                                         ^
+heap.c:78:7: error: ‘heapArray’ undeclared (first use in this function)
+   78 |       heapArray[indiceHijoMayorPrioridad] = aux;
+      |       ^~~~~~~~~
+heap.c:78:7: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+7cbba8c
