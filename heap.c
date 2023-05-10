@@ -54,7 +54,7 @@ void heap_push(Heap *pq, void *data, int priority)
       pq -> heapArray[i].priority = priority;
       return;
     }
-    i++;
+    i = 2*i + 1;
   }
   
 }
