@@ -22,12 +22,6 @@ Heap *createHeap()
 {
   Heap *h = malloc(sizeof(Heap));
 
-  if (!h)
-  {
-    free(h);
-    return NULL;
-  }
-  
   h -> heapArray = malloc(3*sizeof(Heap));
   h -> size = 0;
   h -> capac = 3;
@@ -49,13 +43,11 @@ void heap_push(Heap *pq, void *data, int priority)
   if(pq -> size == pq -> capac)
   {
     pq -> capac = pq -> capac * 2 + 1;
-
     pq -> heapArray = realloc(pq -> heapArray, pq -> capac * sizeof(heapElem));
   }
 
   pq -> heapArray[pq -> size].data = data;
   pq -> heapArray[pq -> size].priority = priority;
-  
   pq -> size++;
 
   while (pq -> heapArray[pq -> size].priority > (pq -> heapArray[(pq -> size - 1) / 2].priority)

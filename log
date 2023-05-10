@@ -332,3 +332,23 @@ heap.c:47:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 77c145e
+Wed 10 May 2023 07:49:03 PM UTC: 
+ heap.c | 6 ------
+ 1 file changed, 6 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:53:97: error: expected ‘)’ before ‘{’ token
+   53 |   while (pq -> heapArray[pq -> size].priority > (pq -> heapArray[(pq -> size - 1) / 2].priority)
+      |         ~                                                                                       ^
+      |                                                                                                 )
+   54 |   {
+      |   ~                                                                                              
+heap.c:67:1: error: expected expression before ‘}’ token
+   67 | }
+      | ^
+heap.c:41:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
+   41 |   heapElem auxiliar;
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5e8677c
