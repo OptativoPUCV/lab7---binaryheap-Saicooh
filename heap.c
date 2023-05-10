@@ -58,8 +58,29 @@ void heap_push(Heap *pq, void *data, int priority)
 }
 
 
-void heap_pop(Heap* pq){
+void heap_pop(Heap *pq)
+{
+  int indicePadre = 0, indiceHijoMayorPrioridad;
+  heapElem raiz = pq -> heapArray[0], aux;
+  pq -> heapArray[0] = pq -> heapArray[pq -> size - 1];
+  
+  while (pq -> size > 2 * indicePadre + 1)
+  {
+    indiceHijoMayorPrioridad = 2 * indicePadre + 1;
+    if(indiceHijoMayorPrioridad + 1 < pq -> size)
+      if(pq -> heapArray[indiceHijoMayorPrioridad + 1]) > (pq -> heapArray[indiceHijoMayorPrioridad])
+        indiceHijoMayorPrioridad++;
+    
+    if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
+    {
+      aux = pq -> heapArray[indicePadre];
+      pq -> heapArray[indicePadre] = heapArray[indiceHijoMayorPrioridad];
+      heapArray[indiceHijoMayorPrioridad] = aux;
+    }
+    else break;
+  }
 
+  pq -> size--;
 }
 
 
