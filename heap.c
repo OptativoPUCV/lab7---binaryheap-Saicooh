@@ -29,7 +29,7 @@ Heap *createHeap()
   return h;
 }
 
-void* heap_top(Heap* pq)
+void *heap_top(Heap* pq)
 {
   if(!pq -> size) return NULL;
 
@@ -57,33 +57,29 @@ void heap_push(Heap *pq, void *data, int priority)
   pq -> size++;
 }
 
-
 void heap_pop(Heap *pq)
 {
-  int posIzq = 1, posDer = 2, pos = 0;
-  heapElem aux;
+  int hijoMenor = 1, hijoMayor = 2, pos = 0;
+  heapElem auxiliar;
+  
   pq -> size--;
   pq -> heapArray[0] = pq -> heapArray[pq -> size];
   
   while (posIzq < pq -> size)
   {
-    int hijo = posIzq;
-    if (posDer < pq -> size && pq -> heapArray[posDer].priority > pq -> heapArray[posIzq].priority) hijo = posDer;
+    int nodoHijo = hijoMenor;
     
-    if(pq -> heapArray[pos].priority >= pq -> heapArray[hijo].priority) break;
+    if (hijoMenor < pq -> size && pq -> heapArray[hijoMayor].priority > pq -> heapArray[hijoMenor].priority) nodoHijo = hijoMayor;
     
-    //if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
-    aux = pq -> heapArray[pos];
+    if(pq -> heapArray[pos].priority >= pq -> heapArray[nodoHijo].priority) break;
+    
+    auxiliar = pq -> heapArray[pos];
     pq -> heapArray[pos] = pq -> heapArray[hijo];
-    pq -> heapArray[hijo] = aux;
-    pos = hijo;
-    posIzq = posIzq * 2 + 1;
-    posDer = posDer * 2 + 2;
-    //else break;
+    pq -> heapArray[nodoHijo] = auxiliar;
+    pos = nodoHijo;
+    hijoMenor = hijoMenor * 2 + 1;
+    hijoMayor = hijoMayor * 2 + 2;
   }
-  
-  
-  
 }
 
 

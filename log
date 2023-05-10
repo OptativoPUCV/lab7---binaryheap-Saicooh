@@ -893,3 +893,18 @@ Wed 10 May 2023 10:40:34 PM UTC:
  tests:  8|0
 total_score: 70/70
 0ea5e50
+Wed 10 May 2023 11:07:17 PM UTC: 
+ heap.c | 28 ++++++++++++----------------
+ 1 file changed, 12 insertions(+), 16 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_pop’:
+heap.c:68:10: error: ‘posIzq’ undeclared (first use in this function)
+   68 |   while (posIzq < pq -> size)
+      |          ^~~~~~
+heap.c:68:10: note: each undeclared identifier is reported only once for each function it appears in
+In file included from test.c:4:
+heap.c:77:44: error: ‘hijo’ undeclared (first use in this function)
+   77 |     pq -> heapArray[pos] = pq -> heapArray[hijo];
+      |                                            ^~~~
+Compilation failed
+83547aa
