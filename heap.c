@@ -64,17 +64,9 @@ void heap_pop(Heap *pq)
   heapElem aux;
   pq -> heapArray[0] = pq -> heapArray[pq -> size - 1];
   
-  while (pq -> size > 2 * indicePadre + 1)
+  while (indicePadre <= pq -> capac)
   {
-    indiceHijoMayorPrioridad = 2 * indicePadre + 1;
-    if(indiceHijoMayorPrioridad + 1 < pq -> size)
-    {
-      if(pq -> heapArray[indicePadre + 1].priority > pq -> heapArray[indiceHijoMayorPrioridad].priority)
-      {
-        indiceHijoMayorPrioridad++;
-      }
-    }
-      
+    
     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
     {
       aux = pq -> heapArray[indicePadre];
