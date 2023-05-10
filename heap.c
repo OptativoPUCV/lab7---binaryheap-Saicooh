@@ -38,7 +38,7 @@ void* heap_top(Heap* pq)
 
 void heap_push(Heap *pq, void *data, int priority)
 {
-  heapElem auxiliar;
+  //heapElem auxiliar;
   
   if(pq -> size == pq -> capac)
   {
