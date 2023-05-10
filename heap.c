@@ -75,7 +75,7 @@ void heap_pop(Heap *pq)
     {
       aux = pq -> heapArray[indicePadre];
       pq -> heapArray[indicePadre] = pq -> heapArray[indiceHijoMayorPrioridad];
-      heapArray[indiceHijoMayorPrioridad] = aux;
+      pq -> heapArray[indiceHijoMayorPrioridad] = aux;
     }
     else break;
   }
