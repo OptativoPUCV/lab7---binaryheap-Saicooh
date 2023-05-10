@@ -66,7 +66,7 @@ void heap_pop(Heap *pq)
   
   while (indicePadre <= pq -> capac)
   {
-    
+    a
     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
     {
       aux = pq -> heapArray[indicePadre];
