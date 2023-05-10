@@ -67,7 +67,7 @@ void heap_pop(Heap *pq)
   
   while (posIzq < pq -> size)
   {
-    int hijo = posI;
+    int hijo = posIzq;
     if (posDer < pq -> size && pq -> heapArray[posDer].priority > heapArray[posIzq].priority) hijo = posDer;
     
     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
