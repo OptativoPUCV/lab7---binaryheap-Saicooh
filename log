@@ -426,3 +426,23 @@ heap.c:34:17: error: control reaches end of non-void function [-Werror=return-ty
 cc1: all warnings being treated as errors
 Compilation failed
 55896bc
+Wed 10 May 2023 07:54:19 PM UTC: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:53:97: error: expected ‘)’ before ‘{’ token
+   53 |   while (pq -> heapArray[pq -> size].priority > (pq -> heapArray[(pq -> size - 1) / 2].priority)
+      |         ~                                                                                       ^
+      |                                                                                                 )
+   54 |   {
+      |   ~                                                                                              
+heap.c:67:1: error: expected expression before ‘}’ token
+   67 | }
+      | ^
+heap.c:41:12: error: unused variable ‘auxiliar’ [-Werror=unused-variable]
+   41 |   heapElem auxiliar;
+      |            ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c1f8639
