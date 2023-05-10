@@ -11,7 +11,7 @@ typedef struct nodo
   int priority;
 } heapElem;
 
-typedef struct
+typedef struct Heap
 {
   heapElem* heapArray;
   int size;
