@@ -68,8 +68,13 @@ void heap_pop(Heap *pq)
   {
     indiceHijoMayorPrioridad = 2 * indicePadre + 1;
     if(indiceHijoMayorPrioridad + 1 < pq -> size)
+    {
       if(pq -> heapArray[indiceHijoMayorPrioridad + 1].priority) > (pq -> heapArray[indiceHijoMayorPrioridad].priority)
+      {
         indiceHijoMayorPrioridad++;
+      }
+    }
+      
     
     if(pq -> heapArray[indicePadre].priority < pq -> heapArray[indiceHijoMayorPrioridad].priority)
     {
